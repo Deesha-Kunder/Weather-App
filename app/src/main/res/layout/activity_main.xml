@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+    <RelativeLayout
+        android:id="@+id/idHomeRl"
+        android:background="@drawable/gradient_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/idTvCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City Name"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="35dp"/>
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTvCityName"
+            android:weightSum="3"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_textinput"
+            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idTvInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter City Name"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/idIvSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:src="@drawable/search" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/idTvTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="23"
+            android:textSize="70dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/searchBar"
+            android:gravity="center"
+            android:layout_margin="20dp"/>
+
+        <ImageView
+            android:id="@+id/idImagecloud"
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:layout_below="@+id/idTvTemp"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+        <TextView
+            android:id="@+id/idCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="condition"
+            android:layout_below="@+id/idImagecloud"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today's Weather Forecast"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:layout_above="@+id/idRvWeather"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/idRvWeather"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </RelativeLayout>
+</RelativeLayout>
